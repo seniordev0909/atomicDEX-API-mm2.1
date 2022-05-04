@@ -1,0 +1,24 @@
+.vscode
+cmake-build-debug
+
+# Ignoring the Dockerfile allows us to change it without invalidating the "COPY ." step.
+/Dockerfile
+
+/target
+!/target/release/mm2
+/mm2src/*/target
+
+/build
+/x64
+/marketmaker_depends
+
+/js/node_modules
+/js/*.dll
+/js/*.wasm
+/js/mm2
+/js/mm2.exe
+/wasm-build.log
+
+# Opt out from history in order to speed the `COPY .` up.
+# Note that we should create and/or update the MM_VERSION file when using `COPY .` to build a custom version.
+/.git
